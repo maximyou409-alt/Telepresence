@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telepresence Wide-Angle View</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stream-card {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .stream-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .status-text {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Telepresence Wide-Angle Feed</h2>
+
+        <div class="stream-card">
+            <!-- Stitched Wide-Angle Feed -->
+            <img src="http://localhost:8080/stream?topic=/camera/stitched&type=mjpeg" 
+                 alt="Wide Angle Camera Feed" 
+                 onerror="this.onerror=null; this.src=''; alert('Failed to connect to video stream. Ensure web_video_server and your ROS node are running.');">
+            <p class="status-text">Topic: /camera/stitched</p>
+        </div>
+    </div>
+</body>
+</html>
